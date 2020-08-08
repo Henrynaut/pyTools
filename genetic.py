@@ -29,7 +29,7 @@ if NUM_RATS % 2 != 0:
 #Populate
 def populate(num_rats, min_wt, max_wt, mode_wt):
     """Initialize a population wit ha triangular distribution of weights"""
-    return [int(random.traingular(min_wt, max_wt, mode_wt))\
+    return [int(random.triangular(min_wt, max_wt, mode_wt))\
         for i in range(num_rats)]
 #Grade
 def fitness(population, goal):
@@ -59,3 +59,9 @@ def breed(males, females, litter_size):
             children.append(child)
     return children
 #Mutate
+def mutate(children, mutate_odds, mutate_min, mutate_max):
+    """Randomly alter rat weights using input odds & fractional changes."""
+    for index, rat in enumerate(children):
+        if mutate_odds >= random.random():
+            children[index] = round(rat * random.uniform(mutate_min, mutate_max))
+    return children
