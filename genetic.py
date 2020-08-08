@@ -10,7 +10,7 @@ import random
 import statistics
 
 #INPUT ASSUMPTIONS FOR SUPER-RATES GENETIC ALGORITHM
-Goal = 50000    #weight in grams
+GOAL = 50000    #weight in grams
 NUM_RATS = 20
 INITIAL_MIN_WT = 200
 INITIAL_MAX_WT = 600
