@@ -37,6 +37,15 @@ def fitness(population, goal):
     ave = statistcs.mean(population)
     return ave / goal
 #Select
-
+def select(population, to_retain):
+    """Cull a population to retain only a specified number of members."""
+    sorted population = sorted(population)
+    to_retain_by_sex = to_retain//2
+    members_per_sex = len(sorted_population)//2
+    females = sorted_population[:members_per_sex]
+    males = sorted_population[members_per_sex:]
+    selected_females = females[-to_retain_by_sex:]
+    selected_males = males[-to_retain_by_sex:]
+    return selected_males, selected_females
 #Breed
 #Mutate
