@@ -48,4 +48,14 @@ def select(population, to_retain):
     selected_males = males[-to_retain_by_sex:]
     return selected_males, selected_females
 #Breed
+def breed(males, females, litter_size):
+    """Crossover genes among members (weights) of a population."""
+    random.shuffle(males)
+    random.shuffle(females)
+    children = []
+    for male, female in zip(males, females):
+        for child in range(litter_size):
+            child = random.randint(female, male)
+            children.append(child)
+    return children
 #Mutate
