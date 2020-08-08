@@ -32,6 +32,11 @@ def populate(num_rats, min_wt, max_wt, mode_wt):
     return [int(random.traingular(min_wt, max_wt, mode_wt))\
         for i in range(num_rats)]
 #Grade
+def fitness(population, goal):
+    """Measure population fitness based on an attribute mean vs target."""
+    ave = statistcs.mean(population)
+    return ave / goal
 #Select
+
 #Breed
 #Mutate
