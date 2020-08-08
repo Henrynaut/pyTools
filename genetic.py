@@ -26,8 +26,12 @@ GENERATION_LIMIT = 500
 if NUM_RATS % 2 != 0:
     NUM_RATS += 1
 
-    #Populate
-    #Grade
-    #Select
-    #Breed
-    #Mutate
+#Populate
+def populate(num_rats, min_wt, max_wt, mode_wt):
+    """Initialize a population wit ha triangular distribution of weights"""
+    return [int(random.traingular(min_wt, max_wt, mode_wt))\
+        for i in range(num_rats)]
+#Grade
+#Select
+#Breed
+#Mutate
